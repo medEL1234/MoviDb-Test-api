@@ -2,9 +2,10 @@ import React from "react";
 import { Pagination } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
 
-const PaginitionOne = () => {
+const PaginitionOne = ({ getPage, pageNumber }) => {
   const handlePageClick = (data) => {
-    console.log(data.selected);
+    console.log(data.selected + 1); //pour add a number +0
+    getPage(data.selected + 1);
   };
   const pageCount = 500;
   return (
@@ -15,7 +16,7 @@ const PaginitionOne = () => {
         onPageChange={handlePageClick}
         marginPagesDisplayed={2}
         pageRangeDisplayed={2}
-        pageCount={pageCount}
+        pageCount={pageNumber}
         previousLabel="< previous"
         renderOnZeroPageCount={null}
         containerClassName="pagination justify-content-center"

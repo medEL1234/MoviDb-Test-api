@@ -10,7 +10,10 @@ const Navbar = ({ getMoviesBySearch }) => {
       <Container>
         <Row className="pt-2">
           <Col xs="2" lg="1">
-            <img className="logo" src="logo192.png" alt="dfs"></img>
+            <a href="/">
+              {" "}
+              <img className="logo" src="logo192.png" alt="dfs"></img>
+            </a>
           </Col>
 
           <Col xs="10" lg="11" className="d-flex align-items-center">

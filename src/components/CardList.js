@@ -3,7 +3,7 @@ import { Row } from "react-bootstrap";
 import CardMovi from "./CardMovi";
 import PaginitionOne from "./PaginitionOne";
 
-const CardList = ({ movies }) => {
+const CardList = ({ movies, getPage, pageNumber }) => {
   return (
     <Row className="mt-3">
       {movies.length >= 1 ? (
@@ -13,8 +13,9 @@ const CardList = ({ movies }) => {
       ) : (
         <h1>Not data fond</h1>
       )}
-
-      <PaginitionOne />
+      {movies.length <= 1 ? (
+        <PaginitionOne getPage={getPage} pageNumber={pageNumber} />
+      ) : null}
     </Row>
   );
 };
